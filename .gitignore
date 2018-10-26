@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+bundle.js
+bundle.js.map
 
 # testing
 /coverage
