@@ -2,16 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Title = styled.h1`
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     text-align: center;
-    color: palevioletred;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 0;
+    padding-top: 2rem;
+`
+
+const Hero = styled.header`
+    background-color: red;
+    width: 100%;
+    height: 20vh;
+    
 `
 
 const Header = () => {
     return (
-        <div>
+        <Hero>
             <Title>Pokedex</Title>
-        </div>
+        </Hero>
     );
 };
 
