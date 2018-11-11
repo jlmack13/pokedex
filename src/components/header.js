@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Title = styled.h1`
     font-size: 3.5rem;
+    font-family: 'PokemonGB';
     text-align: center;
     color: white;
     text-transform: uppercase;

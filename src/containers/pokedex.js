@@ -5,11 +5,13 @@ import Pokemon from '../components/pokemon';
 const Wrapper = styled.div`
     margin: 0 auto;
     width: 75%;
+    display: flex;
 `
 
 const pokemon = [
     {
         name: "Pikachu",
+        id: 1,
         description: "Mouse Pokémon",
         type: "Electric",
         imageURL: "https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png",
@@ -17,6 +19,7 @@ const pokemon = [
     },
     {
         name: "Bulbasaur",
+        id: 2,
         description: "Seed Pokémon",
         type: "Grass",
         imageURL: "https://cdn.bulbagarden.net/upload/thumb/2/21/001Bulbasaur.png/120px-001Bulbasaur.png",
@@ -24,16 +27,18 @@ const pokemon = [
     },
     {
         name: "Squirtle",
+        id: 3, 
         description: "Tiny Turtle Pokémon",
         type: "Water",
-        imageURL: "https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png",
+        imageURL: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
         dexNumber: 7
     },
     {
         name: "Charmander",
+        id: 4,
         description: "Lizard Pokémon",
         type: "Fire",
-        imageURL: "https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png",
+        imageURL: "https://cdn.bulbagarden.net/upload/thumb/7/73/004Charmander.png/250px-004Charmander.png",
         dexNumber: 4
     }
 ]
@@ -50,14 +55,14 @@ class Pokedex extends React.Component {
     render() {
         return(
             <Wrapper>
-                <p>This is a pokedex. Here are some pokemon.</p>
                 {this.state.pokemon.map( pokemon => 
                     <Pokemon 
+                        key={pokemon.id}
                         name={pokemon.name} 
                         dexNumber={pokemon.dexNumber}
                         imageURL={pokemon.imageURL}
                         description={pokemon.description}
-                        type={pokemon.imageURL}
+                        type={pokemon.type}
                     /> 
                 )}
             </Wrapper>
