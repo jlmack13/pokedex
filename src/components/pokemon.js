@@ -24,12 +24,24 @@ const Type = styled.p`
     font-size: 16px;
     color: black;
 `
+const Number = styled.p`
+    font-weight: bold;
+    color: blue;
+    font-size: 24px;
+`
+const Description = styled.p`
+    font-size: 18px;
+    color: purple;
+`
 
-const Pokemon = ({imageURL, name, type}) => {
+const Pokemon = ({imageURL, name, type, description, dexNumber}) => {
     return (
         <Card>
             <StyledImage src={imageURL} alt={name}/>
             <Name>{name}</Name>
+            {/* convert the dex number to a string, and pad it with 0s until its 3 digits so it matches conventional formating of pokedex numbers*//}
+            <Number>{dexNumber.toString().padStart(3, "0")}</Number>
+            <Description>{description}</Description>
             <Type>{type}</Type>
         </Card>
     );
