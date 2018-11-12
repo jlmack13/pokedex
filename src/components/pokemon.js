@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Type from './type';
 
 const Card = styled.div`
     background-color: #DEDEDE;
@@ -20,15 +21,6 @@ const Name = styled.p`
     font-size: 14px;
     font-weight: bold;
 `
-
-const Type = styled.div`
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-    background-color: ;
-`
-
-
 
 const Number = styled.p`
     font-weight: bold;

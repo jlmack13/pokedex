@@ -2,35 +2,43 @@ import React from 'react';
 import styled from 'styled-components';
 
 const typeColors = {
-    "water": "",
-    "grass": "",
-    "fire": "",
-    "electric": "",
-    "fairy": "",
-    "dragon": "",
-    "ghost": "",
-    "dark": "",
-    "psychic": "",
-    "fighting": "",
-    "steel": "",
-    "poison": "",
-    "ice": "",
-    "bug": "",
-    "ground": "",
-    "rock": "",
-    "flying": "",
-    "normal": "",
+    "water": "#3A9BFC",
+    "grass": "#7ACA5C",
+    "fire": "#FC462E",
+    "electric": "#FECB45",
+    "fairy": "#EC9BEC",
+    "dragon": "#776BEB",
+    "ghost": "#6768B8",
+    "dark": "#765545",
+    "psychic": "#FC5999",
+    "fighting": "#B95647",
+    "steel": "#AAAABA",
+    "poison": "#A95798",
+    "ice": "#6BCDFD",
+    "bug": "#AAB933",
+    "ground": "#DCBA5D",
+    "rock": "#BAA96A",
+    "flying": "#899BFC",
+    "normal": "#AAAA9A",
 };
 
-const Type = () => {
-    {/* Can I even put a funtion inside a functional component like this? */}
-    getTypeColor = (type) => {
+const StyledIcon = styled.span`
+    background-color: ${props => props.color};
+    padding: .5rem 1rem;
+    color: white;
+    border-radius: 5px;
+`
 
+class Type extends React.Component {
+    getTypeColor = (type) => {
+        return typeColors[type];
     }
 
-    return(
-        <div></div>
-    );
+    render() {
+        return(
+            <StyledIcon color={this.getTypeColor(this.props.type)}>{this.props.type}</StyledIcon>    
+        );
+    }
 
 }
 
