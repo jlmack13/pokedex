@@ -10,16 +10,19 @@ const Card = styled.div`
 `
 
 const StyledImage = styled.img`
-    max-width: 60px;
+    max-width: 80px;
     margin: 0 auto;
+    display: flex;
 `
 
 const Name = styled.p`
     text-transform: uppercase;
     font-family: 'PokemonGB';
     color: black;
-    font-size: 14px;
+    text-align: center;
+    font-size: 16px;
     font-weight: bold;
+    text-shadow: 1px 1px rgba(0, 0, 0, .3);
 `
 
 const Number = styled.p`
@@ -28,8 +31,10 @@ const Number = styled.p`
     font-size: 14px;
 `
 const Description = styled.p`
-    font-size: 12px;
-    color: purple;
+    font-size: 8px;
+    color: forestgreen;
+    font-family: 'PokemonGB';
+    text-align: center;
 `
 
 const Pokemon = ({name, dexNumber, imageURL, description, type}) => {
