@@ -27,6 +27,7 @@ const StyledIcon = styled.span`
     padding: .5rem 1rem;
     color: white;
     border-radius: 5px;
+    margin: 0 auto;
 `
 
 class Type extends React.Component {

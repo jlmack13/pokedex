@@ -28,11 +28,12 @@ const Name = styled.p`
 const Number = styled.p`
     font-weight: bold;
     color: blue;
-    font-size: 14px;
+    font-size: 24px;
 `
 const Description = styled.p`
-    font-size: 8px;
-    color: forestgreen;
+    font-size: .5rem;
+    margin-bottom: 15px;
+    color: black;
     font-family: 'PokemonGB';
     text-align: center;
 `
