@@ -7,8 +7,6 @@ const Card = styled.div`
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .3);
     color: white;
     padding: 1.5rem;
-    display: grid;
-    grid-template-columns: 150px 50px;
 `
 
 const StyledImage = styled.img`
@@ -21,7 +19,7 @@ const Name = styled.p`
     text-transform: uppercase;
     font-family: 'PokemonGB';
     color: black;
-    text-align: center;
+    margin-top: 30px;
     font-size: 16px;
     font-weight: bold;
     text-shadow: 1px 1px rgba(0, 0, 0, .3);
@@ -30,16 +28,21 @@ const Name = styled.p`
 const Number = styled.p`
     font-weight: bold;
     color: blue;
-    font-size: 24px;
-    display: inline;
+    font-size: 20px;
+`
+const PokemonHeader = styled.div`
+    display: grid;
+    grid-template-columns: 150px 50px;
 `
 
 const Pokemon = ({name, dexNumber, imageURL, description, type}) => {
     return (
         <Card>
-            <Name>{name}</Name>
-            {/* convert the dex number to a string, and pad it with 0s until its 3 digits so it matches conventional formating of pokedex numbers*/}
-            <Number>{dexNumber.toString().padStart(3, "0")}</Number>
+            <PokemonHeader>
+                <Name>{name}</Name>
+                {/* convert the dex number to a string, and pad it with 0s until its 3 digits so it matches conventional formating of pokedex numbers*/}
+                <Number>{dexNumber.toString().padStart(3, "0")}</Number>
+            </PokemonHeader>
             <StyledImage src={imageURL} alt={name}/>
             <Type type={type} />
         </Card>
