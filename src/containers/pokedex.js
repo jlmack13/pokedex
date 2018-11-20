@@ -92,7 +92,6 @@ class Pokedex extends React.Component {
     render() {
         return(
             <Wrapper>
-                <p>Note to Self: Figure out how to align cards, maybe use grid?</p>
                 {this.state.pokemon.map( pokemon => 
                     <Pokemon 
                         key={pokemon.id}
