@@ -26,8 +26,12 @@ const StyledIcon = styled.span`
     background-color: ${props => props.color};
     padding: .5rem 1rem;
     color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
     border-radius: 5px;
-    margin: 0 auto;
+    margin: 1.5rem;
+    display: inline-block;
 `
 
 class Type extends React.Component {

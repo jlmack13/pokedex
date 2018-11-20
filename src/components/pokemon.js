@@ -7,10 +7,13 @@ const Card = styled.div`
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .3);
     color: white;
     padding: 1.5rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 `
 
 const StyledImage = styled.img`
-    max-width: 80px;
+    width: 80px;
+    height: 80px;
     margin: 0 auto;
     display: flex;
 `
@@ -27,7 +30,7 @@ const Name = styled.p`
 
 const Number = styled.p`
     font-weight: bold;
-    color: blue;
+    color: #6e6e6e;
     font-size: 20px;
     text-align: right;
     padding-bottom: 1rem;
