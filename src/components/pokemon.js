@@ -33,14 +33,6 @@ const Number = styled.p`
     font-size: 24px;
     display: inline;
 `
-const Description = styled.p`
-    font-size: .5rem;
-    margin-bottom: 15px;
-    color: black;
-    font-family: 'PokemonGB';
-    text-align: center;
-    display: block;
-`
 
 const Pokemon = ({name, dexNumber, imageURL, description, type}) => {
     return (
@@ -49,7 +41,6 @@ const Pokemon = ({name, dexNumber, imageURL, description, type}) => {
             {/* convert the dex number to a string, and pad it with 0s until its 3 digits so it matches conventional formating of pokedex numbers*/}
             <Number>{dexNumber.toString().padStart(3, "0")}</Number>
             <StyledImage src={imageURL} alt={name}/>
-            <Description>{description}</Description>
             <Type type={type} />
         </Card>
     );
