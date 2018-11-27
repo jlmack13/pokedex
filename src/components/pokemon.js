@@ -40,18 +40,33 @@ const PokemonHeader = styled.div`
     grid-template-rows: 30px 50px;
 `
 
-const Pokemon = ({name, dexNumber, imageURL, type}) => {
-    return (
-        <Card>
-            <PokemonHeader>
-                {/* convert the dex number to a string, and pad it with 0s until its 3 digits so it matches conventional formating of pokedex numbers*/}
-                <Number>{dexNumber.toString().padStart(3, "0")}</Number>
-                <Name>{name}</Name>
-            </PokemonHeader>
-            <StyledImage src={imageURL} alt={name}/>
-            <Type type={type} />
-        </Card>
-    );
+class Pokemon extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "Mimkyu",
+            id: 778,
+            imageURL: "https://cdn.bulbagarden.net/upload/thumb/9/9b/778Mimikyu.png/250px-778Mimikyu.png",
+            types: ["ghost", "fairy"]
+        }
+    }
+
+    componentDidMount() {
+        console.log(this.props.url)
+    }
+
+    render() {
+        return (
+            <Card>
+                <PokemonHeader>
+                    <Number>{this.state.id.toString().padStart(3, "0")}</Number>
+                    <Name>{this.props.name}</Name>
+                </PokemonHeader>
+                <StyledImage src={this.state.imageURL} alt={this.props.name}/>
+                <Type type={this.state.type} />
+            </Card>
+        );
+    }
 }
 
 export default Pokemon;
