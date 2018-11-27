@@ -41,7 +41,7 @@ class Type extends React.Component {
 
     render() {
         return(
-            <StyledIcon color={this.getTypeColor(this.props.type)}>{this.props.type}</StyledIcon>    
+            <StyledIcon color={this.getTypeColor(this.props.types[0])}>{this.props.types[0]}</StyledIcon>    
         );
     }
 

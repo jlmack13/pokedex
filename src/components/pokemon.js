@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Type from './type';
 
+const options = {
+    protocol: 'https',
+    versionPath: '/api/v2/',
+    cache: true,
+    timeout: 5 * 1000 // 5s
+}
+
 const Card = styled.div`
     background-color: #DEDEDE;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .3);
@@ -41,30 +48,10 @@ const PokemonHeader = styled.div`
 `
 
 class Pokemon extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: "Mimkyu",
-            id: 778,
-            imageURL: "https://cdn.bulbagarden.net/upload/thumb/9/9b/778Mimikyu.png/250px-778Mimikyu.png",
-            types: ["ghost", "fairy"]
-        }
-    }
-
-    componentDidMount() {
-        console.log(this.props.url)
-    }
 
     render() {
         return (
-            <Card>
-                <PokemonHeader>
-                    <Number>{this.state.id.toString().padStart(3, "0")}</Number>
-                    <Name>{this.props.name}</Name>
-                </PokemonHeader>
-                <StyledImage src={this.state.imageURL} alt={this.props.name}/>
-                <Type type={this.state.type} />
-            </Card>
+            <Name>{this.props.name}</Name> 
         );
     }
 }

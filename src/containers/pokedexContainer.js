@@ -1,5 +1,14 @@
 import React from 'react';
 import Pokedex from '../components/pokedex';
+const Dex = require('pokeapi-js-wrapper');
+
+const options = {
+    protocol: 'https',
+    versionPath: '/api/v2/',
+    cache: true,
+    timeout: 5 * 1000 // 5s
+}
+const P = new Dex.Pokedex(options);
 
 
 //API: https://pokeapi.co/api/v2/pokemon/ 
@@ -14,9 +23,8 @@ class PokedexContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://pokeapi.co/api/v2/pokemon/')
-        .then(res => res.json())
-        .then(json => this.setState({pokemon: json.results}))
+        P.getPokemonsList()
+        .then(res => this.setState({pokemon: res.results}))
     }
 
 
