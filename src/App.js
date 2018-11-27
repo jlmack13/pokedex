@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header';
-import PokedexContainer from './containers/pokedex';
+import PokedexContainer from './containers/pokedexContainer';
 import Filters from './containers/filters';
 
 class App extends Component {
