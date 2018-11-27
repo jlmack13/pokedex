@@ -40,29 +40,18 @@ const PokemonHeader = styled.div`
     grid-template-rows: 30px 50px;
 `
 
-const Pokemon = ({name, url}) => {
+const Pokemon = ({name, dexNumber, imageURL, type}) => {
     return (
         <Card>
             <PokemonHeader>
-                <Name>{name}</Name>
-            </PokemonHeader>
-        </Card>
-    );
-}
-
-export default Pokemon;
-
-{
-    /*
-        <Card>
-            <PokemonHeader>
+                {/* convert the dex number to a string, and pad it with 0s until its 3 digits so it matches conventional formating of pokedex numbers*/}
                 <Number>{dexNumber.toString().padStart(3, "0")}</Number>
                 <Name>{name}</Name>
             </PokemonHeader>
             <StyledImage src={imageURL} alt={name}/>
             <Type type={type} />
         </Card>
-    
-    */
+    );
 }
 
+export default Pokemon;

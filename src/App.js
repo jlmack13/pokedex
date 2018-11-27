@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header';
-import PokedexList from './containers/pokedex';
+import PokedexContainer from './containers/pokedex';
 import Filters from './containers/filters';
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Filters />
-        <PokedexList />
+        <PokedexContainer />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Pokemon from '../components/pokemon';
-const Pokedex = require('pokeapi-js-wrapper');
+
 
 //API: https://pokeapi.co/api/v2/pokemon/ 
 
@@ -13,16 +13,9 @@ const Wrapper = styled.div`
     grid-template-rows: 300px 300px 300px;
     grid-gap: 20px;
 `
-const options = {
-    protocol: 'https',
-    versionPath: '/api/v2/',
-    cache: true,
-    timeout: 5 * 1000 // 5s
-}
 
-const P = new Pokedex.Pokedex(options);
 
-class PokedexList extends React.Component {
+class PokedexContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,26 +24,37 @@ class PokedexList extends React.Component {
     }
 
     componentDidMount() {
-        P.getPokedexsList()
-        .then((response) => {
-            console.log(response);
+        const pokedex = [];
+        fetch('https://pokeapi.co/api/v2/pokemon/')
+        .then(res => res.json())
+        .then(json => json.results)
+        .then(function(pokemon) {
+            pokemon.map(pokemon => (
+                fetch(`${pokemon.url}`)
+                .then( res => res.json())
+                .then(pokemon => pokedex.push(pokemon))
+            ))
         })
+        .then(pokedex => this.setState({pokemon: pokedex}))
     }
+
 
     
     render() {
         return(
-            <Wrapper>
+            <div>
                 {this.state.pokemon.map( pokemon => 
                     <Pokemon 
-              
+                        key={pokemon.id}
                         name={pokemon.name} 
-                        url={pokemon.url}
+                        dexNumber={pokemon.id}
+                        imageURL={pokemon.sprites[0]}
+                        type={pokemon.types}
                     /> 
                 )}
-            </Wrapper>
+            </div>
         );
     }
 }
 
-export default PokedexList;
+export default PokedexContainer;
